@@ -4,19 +4,11 @@ import com.bytecodedl.benchmark.callgraph.annotations.DirectCall;
 
 class Class {
 
-    public void method(){ }
+    public void target(){ }
 
-    @DirectCall(name = "method", line = 11, resolvedTargets = "com.bytecodedl.benchmark.callgraph.virtualcall.vc1.SubClass")
-    public static void callMethod(Class cls) {
-        cls.method();
-    }
-
+    @DirectCall(name = "target", line = 12, resolvedTargets = "Lvc/Class;")
     public static void main(String[] args){
-        callMethod(new SubClass());
+        Class cls = new Class();
+        cls.target();
     }
-}
-
-class SubClass extends Class {
-
-    public void method() { }
 }
