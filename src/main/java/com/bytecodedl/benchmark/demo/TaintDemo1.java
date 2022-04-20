@@ -16,7 +16,8 @@ public class TaintDemo1 {
     }
 
     public void Sink(String param){
-
+        StringBuilder builder = new StringBuilder();
+        builder.append(param);
     }
 
     public String Source(){
