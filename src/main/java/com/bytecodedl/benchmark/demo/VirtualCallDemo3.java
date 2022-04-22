@@ -1,6 +1,6 @@
 package com.bytecodedl.benchmark.demo;
 
-public class VirtuallCallDemo3 implements VirtualCallInterface1 {
+public class VirtualCallDemo3 implements VirtualCallInterface1 {
     public void foo(String fooArg3) {
         foo3(fooArg3);
     }

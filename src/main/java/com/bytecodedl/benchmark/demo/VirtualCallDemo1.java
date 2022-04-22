@@ -6,7 +6,8 @@ public class VirtualCallDemo1 implements VirtualCallInterface1 {
         VirtualCallInterface1 vcall2 = new VirtualCallDemo2();
         VirtualCallDemo1 vcall1 = new VirtualCallDemo1(vcall2);
         VirtualCallInterface1 varParent = vcall1.getParent();
-        varParent.foo("source");
+        String source = vcall1.source();
+        varParent.foo(source);
     }
 
     public VirtualCallDemo1(VirtualCallInterface1 argParent){
@@ -23,5 +24,9 @@ public class VirtualCallDemo1 implements VirtualCallInterface1 {
 
     public static void target(String targetArg){
 
+    }
+
+    public String source(){
+        return "source";
     }
 }
